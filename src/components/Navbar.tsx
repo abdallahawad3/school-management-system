@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <header className="flex justify-between items-center p-4">
+    <header className="flex justify-between items-center p-4 border-b border-gray-200 bg-white">
       {/* Search bar */}
 
       <div className="hidden lg:flex items-center gap-4 border border-gray-300 focus-within:border-blue-500 px-4 py-2 rounded-full shadow-sm w-[300px]">
