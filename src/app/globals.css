@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-calendar {
+  width: 100% !important;
+  font-family: inherit !important;
+  line-height: 1.5 !important;
+  border: none !important;
+}
+.react-calendar__tile--active {
+  background-color: #c3ebfa !important; /* Tailwind's blue-500 */
+  color: #000 !important;
+}

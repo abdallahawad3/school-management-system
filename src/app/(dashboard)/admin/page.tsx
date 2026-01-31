@@ -1,6 +1,8 @@
 import AttendanceLineChart from "@/components/charts/AttendanceLineChart";
 import FinanceChart from "@/components/charts/FinanceChart";
 import RadialBarChartComponent from "@/components/charts/RadialBarChart";
+import Announcement from "@/components/shared/Announcement";
+import EventCalender from "@/components/shared/EventCalender";
 import Card from "@/components/ui/Card";
 
 const page = () => {
@@ -35,7 +37,10 @@ const page = () => {
         </div>
       </div>
       {/* Right Content */}
-      <div className="w-full lg:w-1/3 bg-green-300">r</div>
+      <div className="w-full lg:w-1/3 flex flex-col gap-4">
+        <EventCalender />
+        <Announcement />
+      </div>
     </div>
   );
 };
