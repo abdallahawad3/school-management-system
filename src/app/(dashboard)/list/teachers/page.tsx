@@ -51,7 +51,7 @@ const page = () => {
         <td className="hidden xl:table-cell">{item.address}</td>
         <td className="hidden xl:table-cell">{item.phone}</td>
         <td className="flex items-center  py-4 gap-2">
-          <Link href={`/list/teacher/${item.teacherId}`}>
+          <Link href={`/list/teachers/${item.teacherId}`}>
             <button className="ml-4 size-7 bg-[#C3EBFA] flex items-center justify-center rounded-full overflow-hidden">
               <Image src={"/view.png"} alt="delete teacher" width={16} height={16} />
             </button>
