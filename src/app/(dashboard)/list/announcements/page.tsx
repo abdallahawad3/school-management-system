@@ -1,4 +1,4 @@
-import FromComponent from "@/components/forms/FromComponent";
+import FromModel from "@/components/forms/FromComponent";
 import Pagination from "@/components/shared/Pagination";
 import Table from "@/components/shared/Table";
 import TableSearch from "@/components/shared/TableSearch";
@@ -45,8 +45,8 @@ const AnnouncementListPage = () => {
         <div className="flex items-center gap-2">
           {role === "admin" && (
             <>
-              <FromComponent table="announcement" requestType="update" data={item} />
-              <FromComponent table="announcement" requestType="delete" id={item.id} />
+              <FromModel table="announcement" requestType="update" data={item} />
+              <FromModel table="announcement" requestType="delete" id={item.id} />
             </>
           )}
         </div>
@@ -68,7 +68,7 @@ const AnnouncementListPage = () => {
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {role === "admin" && <FromComponent table="announcement" requestType="create" />}
+            {role === "admin" && <FromModel table="announcement" requestType="create" />}
           </div>
         </div>
       </div>

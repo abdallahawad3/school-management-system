@@ -1,4 +1,4 @@
-import FromComponent from "@/components/forms/FromComponent";
+import FromModel from "@/components/forms/FromComponent";
 import Pagination from "@/components/shared/Pagination";
 import Table from "@/components/shared/Table";
 import TableSearch from "@/components/shared/TableSearch";
@@ -65,13 +65,12 @@ const ResultListPage = () => {
       <td className="hidden md:table-cell">{item.date}</td>
       <td>
         <div className="flex items-center gap-2">
-          {role === "admin" ||
-            (role === "teacher" && (
-              <>
-                <FromComponent table="result" requestType="update" data={item} />
-                <FromComponent table="result" requestType="delete" id={item.id} />
-              </>
-            ))}
+          {(role === "admin" || role === "teacher") && (
+            <>
+              <FromModel table="result" requestType="update" data={item} />
+              <FromModel table="result" requestType="delete" id={item.id} />
+            </>
+          )}
         </div>
       </td>
     </tr>
@@ -92,7 +91,7 @@ const ResultListPage = () => {
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
             {role === "admin" ||
-              (role === "teacher" && <FromComponent table="result" requestType="create" />)}
+              (role === "teacher" && <FromModel table="result" requestType="create" />)}
           </div>
         </div>
       </div>

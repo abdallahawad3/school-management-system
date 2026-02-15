@@ -1,4 +1,4 @@
-import FromComponent from "@/components/forms/FromComponent";
+import FromModel from "@/components/forms/FromComponent";
 import Pagination from "@/components/shared/Pagination";
 import Table from "@/components/shared/Table";
 import TableSearch from "@/components/shared/TableSearch";
@@ -55,7 +55,7 @@ const page = () => {
               <Image src={"/view.png"} alt="delete teacher" width={16} height={16} />
             </button>
           </Link>
-          {role === "admin" && <FromComponent id={item.id} requestType="delete" table="student" />}
+          {role === "admin" && <FromModel id={item.id} requestType="delete" table="student" />}
         </td>
       </tr>
     );

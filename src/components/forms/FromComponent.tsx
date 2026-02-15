@@ -9,7 +9,7 @@ interface IProps {
   data?: any;
   id?: number;
 }
-const FromComponent = ({ id, requestType, table, data }: IProps) => {
+const FromModel = ({ id, requestType, table, data }: IProps) => {
   const size = requestType === "create" ? "w-8 h-8" : "w-7 h-7";
   const bgColor =
     requestType === "create" ? "bg-yellow" : requestType === "update" ? "bg-sky" : "bg-purple";
@@ -22,4 +22,4 @@ const FromComponent = ({ id, requestType, table, data }: IProps) => {
   );
 };
 
-export default FromComponent;
+export default FromModel;

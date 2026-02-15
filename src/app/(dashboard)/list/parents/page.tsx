@@ -1,4 +1,4 @@
-import FromComponent from "@/components/forms/FromComponent";
+import FromModel from "@/components/forms/FromComponent";
 import Pagination from "@/components/shared/Pagination";
 import Table from "@/components/shared/Table";
 import TableSearch from "@/components/shared/TableSearch";
@@ -59,9 +59,9 @@ const page = () => {
         <td className="hidden xl:table-cell">{item.address}</td>
         <td className="flex items-center  py-4 gap-2">
           {role === "admin" && (
-            <FromComponent id={item.id} requestType="update" table="parent" data={item} />
+            <FromModel id={item.id} requestType="update" table="parent" data={item} />
           )}
-          {role === "admin" && <FromComponent id={item.id} requestType="delete" table="parent" />}
+          {role === "admin" && <FromModel id={item.id} requestType="delete" table="parent" />}
         </td>
       </tr>
     );
@@ -83,7 +83,7 @@ const page = () => {
             <button className="size-8 flex items-center justify-center bg-yellow rounded-full">
               <Image src={"/sort.png"} alt="sort" width={14} height={14} />
             </button>
-            {role === "admin" && <FromComponent requestType="delete" table="parent" />}
+            {role === "admin" && <FromModel requestType="delete" table="parent" />}
           </div>
         </div>
       </div>
