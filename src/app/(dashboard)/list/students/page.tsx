@@ -1,3 +1,4 @@
+import FromComponent from "@/components/forms/FromComponent";
 import Pagination from "@/components/shared/Pagination";
 import Table from "@/components/shared/Table";
 import TableSearch from "@/components/shared/TableSearch";
@@ -23,6 +24,7 @@ type RowType = {
   class: string;
   studentId: string;
   address: string;
+  id: number;
 };
 const page = () => {
   const renderRow = (item: RowType) => {
@@ -53,11 +55,7 @@ const page = () => {
               <Image src={"/view.png"} alt="delete teacher" width={16} height={16} />
             </button>
           </Link>
-          {role === "admin" && (
-            <button className="ml-4 size-7 bg-[#CFCEFF] flex items-center justify-center rounded-full overflow-hidden">
-              <Image src={"/delete.png"} alt="delete teacher" width={16} height={16} />
-            </button>
-          )}
+          {role === "admin" && <FromComponent id={item.id} requestType="delete" table="student" />}
         </td>
       </tr>
     );

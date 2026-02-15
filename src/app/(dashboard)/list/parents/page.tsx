@@ -1,3 +1,4 @@
+import FromComponent from "@/components/forms/FromComponent";
 import Pagination from "@/components/shared/Pagination";
 import Table from "@/components/shared/Table";
 import TableSearch from "@/components/shared/TableSearch";
@@ -57,16 +58,10 @@ const page = () => {
         <td className="hidden lg:table-cell">{item.phone}</td>
         <td className="hidden xl:table-cell">{item.address}</td>
         <td className="flex items-center  py-4 gap-2">
-          <Link href={`/list/parents/${item.parentId}`}>
-            <button className="ml-4 size-7 bg-[#C3EBFA] flex items-center justify-center rounded-full overflow-hidden">
-              <Image src={"/view.png"} alt="delete teacher" width={16} height={16} />
-            </button>
-          </Link>
           {role === "admin" && (
-            <button className="ml-4 size-7 bg-[#CFCEFF] flex items-center justify-center rounded-full overflow-hidden">
-              <Image src={"/delete.png"} alt="delete teacher" width={16} height={16} />
-            </button>
+            <FromComponent id={item.id} requestType="update" table="parent" data={item} />
           )}
+          {role === "admin" && <FromComponent id={item.id} requestType="delete" table="parent" />}
         </td>
       </tr>
     );
@@ -88,9 +83,7 @@ const page = () => {
             <button className="size-8 flex items-center justify-center bg-yellow rounded-full">
               <Image src={"/sort.png"} alt="sort" width={14} height={14} />
             </button>
-            <button className="size-8 flex items-center justify-center bg-yellow rounded-full">
-              <Image src={"/plus.png"} alt="plus" width={14} height={14} />
-            </button>
+            {role === "admin" && <FromComponent requestType="delete" table="parent" />}
           </div>
         </div>
       </div>

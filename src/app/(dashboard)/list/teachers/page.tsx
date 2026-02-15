@@ -1,10 +1,10 @@
+import FromComponent from "@/components/forms/FromComponent";
 import Pagination from "@/components/shared/Pagination";
 import Table from "@/components/shared/Table";
 import TableSearch from "@/components/shared/TableSearch";
 import { role, teachersData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
-import { clearLine } from "readline";
 const columns = [
   { header: "Info", accessor: "info" },
   { header: "Teacher Id", accessor: "teacherId", className: "hidden md:table-cell" },
@@ -25,6 +25,7 @@ type RowType = {
   subjects: string[];
   classes: string[];
   address: string;
+  id: number;
 };
 const page = () => {
   const renderRow = (item: RowType) => {
@@ -56,11 +57,7 @@ const page = () => {
               <Image src={"/view.png"} alt="delete teacher" width={16} height={16} />
             </button>
           </Link>
-          {role === "admin" && (
-            <button className="ml-4 size-7 bg-[#CFCEFF] flex items-center justify-center rounded-full overflow-hidden">
-              <Image src={"/delete.png"} alt="delete teacher" width={16} height={16} />
-            </button>
-          )}
+          {role === "admin" && <FromComponent id={item.id} requestType="delete" table="teacher" />}
         </td>
       </tr>
     );
